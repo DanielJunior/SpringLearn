@@ -5,15 +5,11 @@
  */
 package br.com.danieljunior.learn.services;
 
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Component;
-
 /**
  *
  * @author danieljr
  */
-@Component
-@Profile("spanish")
+
 public class HelloWorldServiceSpanishImpl implements HelloWorldService{
 
     @Override

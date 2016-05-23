@@ -5,16 +5,11 @@
  */
 package br.com.danieljunior.learn.services;
 
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Component;
-
 /**
  *
  * @author danieljr
  */
-@Component
-//this enable a way to choose a diferent language to be displayed. This configurations keep at application.properties file
-@Profile({"default","english"})
+
 public class HelloWorldServiceEnglishImpl implements HelloWorldService{
 
     @Override
