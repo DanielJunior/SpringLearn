@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 //this enable a way to choose a diferent language to be displayed. This configurations keep at application.properties file
-@Profile("english")
+@Profile({"default","english"})
 public class HelloWorldServiceEnglishImpl implements HelloWorldService{
 
     @Override
