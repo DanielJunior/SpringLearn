@@ -5,9 +5,8 @@
  */
 package br.com.danieljunior.learn.config;
 
+import br.com.danieljunior.learn.services.HelloWorldFactory;
 import br.com.danieljunior.learn.services.HelloWorldService;
-import br.com.danieljunior.learn.services.HelloWorldServiceEnglishImpl;
-import br.com.danieljunior.learn.services.HelloWorldServiceSpanishImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -21,13 +20,18 @@ public class HelloWorldConfig {
 
     @Bean
     @Profile({"default", "english"})
-    public HelloWorldService helloWorldServiceEnglishImpl() {
-        return new HelloWorldServiceEnglishImpl();
+    public HelloWorldService helloWorldServiceEnglishImpl(HelloWorldFactory factory) {
+        return factory.createHelloWorldService("en");
     }
     
     @Bean
     @Profile("spanish")
-    public HelloWorldService helloWorldServiceSpanishImpl() {
-        return new HelloWorldServiceSpanishImpl();
+    public HelloWorldService helloWorldServiceSpanishImpl(HelloWorldFactory factory) {
+        return factory.createHelloWorldService("es");
+    }
+    
+    @Bean
+    public HelloWorldFactory helloWorldFactory(){
+        return new HelloWorldFactory();
     }
 }
