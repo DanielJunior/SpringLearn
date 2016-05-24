@@ -16,24 +16,24 @@ import org.springframework.context.annotation.Profile;
  *
  * @author danieljr
  */
-@Configuration
-public class HelloWorldConfig {
-
-    @Bean
-    @Profile("english")
-    @Primary
-    public HelloWorldService helloWorldServiceEnglishImpl(HelloWorldFactory factory) {
-        return factory.createHelloWorldService("en");
-    }
-    
-    @Bean
-    @Profile("spanish")
-    public HelloWorldService helloWorldServiceSpanishImpl(HelloWorldFactory factory) {
-        return factory.createHelloWorldService("es");
-    }
-    
-    @Bean
-    public HelloWorldFactory helloWorldFactory(){
-        return new HelloWorldFactory();
-    }
-}
+//@Configuration
+//public class HelloWorldConfig {
+//
+////    @Bean
+////    @Profile("english")
+////    @Primary
+////    public HelloWorldService helloWorldServiceEnglishImpl(HelloWorldFactory factory) {
+////        return factory.createHelloWorldService("en");
+////    }
+//    
+//    @Bean
+//    @Profile("spanish")
+//    public HelloWorldService helloWorldServiceSpanishImpl(HelloWorldFactory factory) {
+//        return factory.createHelloWorldService("es");
+//    }
+//    
+////    @Bean
+////    public HelloWorldFactory helloWorldFactory(){
+////        return new HelloWorldFactory();
+////    }
+//}
