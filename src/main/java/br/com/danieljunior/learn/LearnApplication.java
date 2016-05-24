@@ -4,8 +4,10 @@ import br.com.danieljunior.learn.controllers.GreetingController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
+@ImportResource("classpath:/context/application-context.xml")
 public class LearnApplication {
 
     public static void main(String[] args) {
