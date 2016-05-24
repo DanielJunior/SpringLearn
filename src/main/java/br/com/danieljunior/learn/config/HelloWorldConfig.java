@@ -9,6 +9,7 @@ import br.com.danieljunior.learn.services.HelloWorldFactory;
 import br.com.danieljunior.learn.services.HelloWorldService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 
 /**
@@ -19,7 +20,8 @@ import org.springframework.context.annotation.Profile;
 public class HelloWorldConfig {
 
     @Bean
-    @Profile({"default", "english"})
+    @Profile("english")
+    @Primary
     public HelloWorldService helloWorldServiceEnglishImpl(HelloWorldFactory factory) {
         return factory.createHelloWorldService("en");
     }
