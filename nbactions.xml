@@ -8,6 +8,8 @@
             <goals>
                 <goal>process-classes</goal>
                 <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
+                <goal>clean</goal>
+                <goal>install</goal>
             </goals>
             <properties>
                 <exec.args>-classpath %classpath br.com.danieljunior.learn.LearnApplication</exec.args>
